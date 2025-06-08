@@ -39,6 +39,7 @@ header {
   margin: 0 auto;
 }
 
+/* เมนูปกติ */
 .menu ul {
   display: flex;
   gap: 20px;
@@ -78,6 +79,36 @@ header {
   height: 20px;
 }
 
+/* เบอร์เกอร์เมนู (ซ่อนบน desktop) */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.burger div {
+  height: 4px;
+  background-color: #d0d3da;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* เบอร์เกอร์เมนู active animation */
+.burger.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.active div:nth-child(2) {
+  opacity: 0;
+}
+.burger.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* content */
 .content {
   position: relative;
@@ -87,4 +118,139 @@ header {
 .H {
   width: 100%;
   height: 50px;
+}
+
+
+/* === Responsive === */
+
+/* มือถือแนวตั้ง - max 480px */
+@media (max-width: 480px) {
+  .burger {
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #121212;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu.active {
+    right: 0;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 20px;
+    gap: 20px;
+  }
+
+  .menu ul li a {
+    font-size: 20px;
+    padding: 12px 0;
+    width: 100%;
+    color: #d0d3da;
+  }
+}
+
+/* แท็บเล็ตแนวตั้ง 481 - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100vh;
+    background-color: #121212;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu.active {
+    right: 0;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 30px;
+    gap: 25px;
+  }
+
+  .menu ul li a {
+    font-size: 22px;
+    padding: 15px 0;
+    width: 100%;
+    color: #d0d3da;
+  }
+}
+
+/* แท็บเล็ตแนวนอน 769 - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .burger {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+    display: flex !important;
+    align-items: center;
+  }
+
+  .menu ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .menu ul li a {
+    font-size: 20px;
+  }
+}
+
+/* desktop 1025px ขึ้นไป */
+@media (min-width: 1025px) {
+  .burger {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+    display: flex !important;
+    align-items: center;
+  }
+
+  .menu ul {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .menu ul li a {
+    font-size: 22px;
+  }
 }

@@ -6,10 +6,10 @@ body {
 }
 
 .bg {
-  position: relative;
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
+  height: auto;
 }
+
 
 .bg::before {
   content: "";

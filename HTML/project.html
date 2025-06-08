@@ -18,14 +18,22 @@
                         <div class="logo">
                             <img src="/IMAGE/LOGO/INTRO ME.png" alt="Logo">
                         </div>
-                        <div class="menu">
+
+                        <!-- เบอร์เกอร์ไอคอน -->
+                        <div class="burger" id="burger">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <div class="menu" id="menu">
                             <ul>
                                 <li><a href="/index.html"><img src="/IMAGE/ICON/Home.png" alt="icon">
                                         <span>HOME</span></a></li>
-                                <li><a href="/HTML/about.html"><img src="/IMAGE/ICON/User.png" alt="icon"> <span>ABOUT
+                                <li><a href="/HTML/about.html"><img src="/IMAGE/ICON/User.png"
+                                            alt="icon"> <span>ABOUT
                                             US</span></a></li>
-                                <li><a href="/HTML/project.html" class="active"><img src="/IMAGE/ICON/code-bracket.png"
-                                            alt="icon">
+                                <li><a href="/HTML/project.html" class="active"><img src="/IMAGE/ICON/code-bracket.png" alt="icon">
                                         <span>PROJECTS</span></a>
                                 </li>
                                 <li><a href="/HTML/resume.html"><img src="/IMAGE/ICON/Subtract.png" alt="icon">
@@ -50,6 +58,24 @@
                 e.preventDefault();
             });
         }
+    });
+
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('menu');
+
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+
+    // ปิดเมนูเมื่อคลิกลิงก์ในเมนู (มือถือ)
+    document.querySelectorAll('.menu ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                burger.classList.remove('active');
+            }
+        });
     });
 </script>
 
