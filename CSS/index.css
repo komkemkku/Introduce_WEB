@@ -1,15 +1,21 @@
+html,
 body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   font-family: "Black Ops One", cursive;
 }
 
 .bg {
   position: relative;
-  height: calc(var(--vh, 1vh) * 100);
-  min-height: 100vh;
-  overflow: hidden;
+  min-height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  overflow: visible;
 }
 
 .bg::before {
@@ -22,8 +28,9 @@ body {
   background-image: url("/IMAGE/BG.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   opacity: 1;
-  z-index: 0;
+  z-index: -1;
 }
 
 /* nav */
@@ -364,8 +371,8 @@ header {
   }
 }
 
-/* แท็บเล็ตแนวนอน 769 - 1024px */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* แท็บเล็ตแนวนอน 769 - 1366px (เพิ่มสูงสุดเป็น 1366px เพื่อรองรับ iPad Pro แนวตั้งและแนวนอน) */
+@media (min-width: 769px) and (max-width: 1366px) {
   .burger {
     display: none;
   }
@@ -391,30 +398,34 @@ header {
 
   .content2 {
     flex-direction: row;
-    padding: 0 20px;
+    padding: 0 40px;
+    justify-content: center;
+    gap: 40px;
   }
 
   .P {
-    width: 450px;
-    margin-left: 150px;
+    width: 400px;
+    margin-left: 0;
     padding: 20px;
   }
 
   .T {
-    margin-left: 200px;
-    font-size: 38px;
+    margin-left: 0;
+    font-size: 36px;
     text-align: left;
+    align-self: center;
+    max-width: 400px;
   }
 
   .button-container {
-    margin-left: 350px;
-    margin-top: 80px;
-    justify-content: flex-start;
+    margin-left: 0;
+    margin-top: 50px;
+    justify-content: center;
   }
 }
 
-/* desktop 1025px ขึ้นไป */
-@media (min-width: 1025px) {
+/* desktop 1367px ขึ้นไป */
+@media (min-width: 1367px) {
   .burger {
     display: none;
   }
