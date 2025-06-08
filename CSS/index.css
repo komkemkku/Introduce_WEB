@@ -1,0 +1,462 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Black Ops One", cursive;
+}
+
+.bg {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/IMAGE/BG.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 1;
+  z-index: 0;
+}
+
+/* nav */
+header {
+  margin: 0;
+  font-family: "Black Ops One", cursive;
+  padding: 10px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.H {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 50px;
+}
+
+/* เมนูปกติ */
+.menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.menu ul li a {
+  position: relative;
+  text-decoration: none;
+  color: #d0d3da;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.menu ul li a:hover::after,
+.menu ul li a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: #d0d3da;
+}
+
+.menu ul li a.active {
+  color: #d0d3da;
+}
+
+.menu ul li img {
+  width: 20px;
+  height: 20px;
+}
+
+/* เบอร์เกอร์เมนู (ซ่อนบน desktop) */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.burger div {
+  height: 4px;
+  background-color: #d0d3da;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+/* เบอร์เกอร์เมนู active animation */
+.burger.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.burger.active div:nth-child(2) {
+  opacity: 0;
+}
+.burger.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* content */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* content2 */
+.content2 {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  padding: 20px 0;
+}
+
+/* กล่องรูปภาพ */
+.P {
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  margin-left: 150px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+  margin-top: 15px;
+}
+
+.name h1 {
+  font-family: "Black Ops One", cursive;
+  font-size: 46px;
+  font-weight: bold;
+  color: #3f6280;
+}
+
+/* ข้อความแนะนำตัว */
+.T {
+  margin-left: 200px;
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #d0d3da;
+}
+
+.T G1 {
+  font-size: 32px;
+  color: #d0d3da;
+}
+
+.T .G2 {
+  font-size: 32px;
+  color: #d0d3da;
+  margin-top: 70px;
+}
+
+.T span {
+  font-size: 38px;
+  color: #3f6280;
+}
+
+.text-rotator span {
+  font-size: 36px;
+  font-weight: bold;
+  color: #d0d3da;
+  text-align: center;
+  margin-top: 50px;
+  font-family: "Black Ops One", cursive;
+  min-height: 48px; /* ป้องกัน layout กระตุก */
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #3f6280;
+  animation: blink-caret 0.75s step-end infinite;
+}
+
+/* กระพริบเส้นเคอร์เซอร์ */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.button-container {
+  margin-left: 350px;
+  margin-top: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-button {
+  font-family: "Black Ops One", cursive;
+  width: 250px;
+  height: 80px;
+  background-color: #3f6280;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 36px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.custom-button:hover {
+  background-color: #2e4d66;
+}
+
+/* === Responsive === */
+
+/* มือถือแนวตั้ง - max 480px */
+@media (max-width: 480px) {
+  .burger {
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: #121212;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu.active {
+    right: 0;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 20px;
+    gap: 20px;
+  }
+
+  .menu ul li a {
+    font-size: 20px;
+    padding: 12px 0;
+    width: 100%;
+    color: #d0d3da;
+  }
+
+  .content2 {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  .P {
+    width: 90vw;
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .T {
+    margin-left: 0;
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .button-container {
+    margin-left: 0;
+    margin-top: 30px;
+    justify-content: center;
+  }
+}
+
+/* แท็บเล็ตแนวตั้ง 481 - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 60%;
+    height: 100vh;
+    background-color: #121212;
+    padding-top: 80px;
+    transition: right 0.3s ease;
+    z-index: 15;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .menu.active {
+    right: 0;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 30px;
+    gap: 25px;
+  }
+
+  .menu ul li a {
+    font-size: 22px;
+    padding: 15px 0;
+    width: 100%;
+    color: #d0d3da;
+  }
+
+  .content2 {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .P {
+    width: 70vw;
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .T {
+    margin-left: 0;
+    font-size: 34px;
+    text-align: center;
+  }
+
+  .button-container {
+    margin-left: 0;
+    margin-top: 50px;
+    justify-content: center;
+  }
+}
+
+/* แท็บเล็ตแนวนอน 769 - 1024px */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .burger {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+    display: flex !important;
+    align-items: center;
+  }
+
+  .menu ul {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .menu ul li a {
+    font-size: 20px;
+  }
+
+  .content2 {
+    flex-direction: row;
+    padding: 0 20px;
+  }
+
+  .P {
+    width: 450px;
+    margin-left: 150px;
+    padding: 20px;
+  }
+
+  .T {
+    margin-left: 200px;
+    font-size: 38px;
+    text-align: left;
+  }
+
+  .button-container {
+    margin-left: 350px;
+    margin-top: 80px;
+    justify-content: flex-start;
+  }
+}
+
+/* desktop 1025px ขึ้นไป */
+@media (min-width: 1025px) {
+  .burger {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
+    display: flex !important;
+    align-items: center;
+  }
+
+  .menu ul {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .menu ul li a {
+    font-size: 22px;
+  }
+
+  .content2 {
+    flex-direction: row;
+    padding: 0 40px;
+  }
+
+  .P {
+    width: 500px;
+    margin-left: 150px;
+    padding: 20px;
+  }
+
+  .T {
+    margin-left: 200px;
+    font-size: 42px;
+    text-align: left;
+  }
+
+  .button-container {
+    margin-left: 350px;
+    margin-top: 250px;
+    justify-content: center;
+  }
+}

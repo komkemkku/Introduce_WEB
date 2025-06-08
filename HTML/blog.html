@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/CSS/blog.css" />
+    <title>BLOG</title>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="content">
+            <header>
+                <nav>
+                    <div class="H">
+                        <div class="logo">
+                            <img src="/IMAGE/LOGO/INTRO ME.png" alt="Logo">
+                        </div>
+                        <div class="menu">
+                            <ul>
+                                <li><a href="/HTML/index.html"><img src="/IMAGE/ICON/Home.png" alt="icon">
+                                        <span>HOME</span></a></li>
+                                <li><a href="/HTML/about.html"><img src="/IMAGE/ICON/User.png" alt="icon"> <span>ABOUT
+                                            US</span></a></li>
+                                <li><a href="/HTML/project.html"><img src="/IMAGE/ICON/code-bracket.png" alt="icon">
+                                        <span>PROJECTS</span></a>
+                                </li>
+                                <li><a href="/HTML/resume.html"><img src="/IMAGE/ICON/Subtract.png" alt="icon">
+                                        <span>RESUME</span></a>
+                                </li>
+                                <li><a href="/HTML/blog.html" class="active"><img src="/IMAGE/ICON/Vector (Stroke).png"
+                                            alt="icon">
+                                        <span>BLOG</span></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const activeLink = document.querySelector(".menu ul li a.active");
+        if (activeLink) {
+            activeLink.addEventListener("click", function (e) {
+                e.preventDefault();
+            });
+        }
+    });
+</script>
+
+</html>

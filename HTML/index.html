@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" type="image/png" href="/IMAGE/LOGO/INTRO ME.png" class="logo" /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/CSS/index.css" />
+    <title>HOME</title>
+</head>
+
+<body>
+    <div class="bg">
+        <div class="content">
+            <header>
+                <nav>
+                    <div class="H">
+                        <div class="logo">
+                            <img src="/IMAGE/LOGO/INTRO ME.png" alt="Logo">
+                        </div>
+
+                        <!-- เบอร์เกอร์ไอคอน -->
+                        <div class="burger" id="burger">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <div class="menu" id="menu">
+                            <ul>
+                                <li><a href="/HTML/index.html" class="active"><img src="/IMAGE/ICON/Home.png"
+                                            alt="icon"> <span>HOME</span></a></li>
+                                <li><a href="#"><img src="/IMAGE/ICON/User.png" alt="icon"> <span>ABOUT US</span></a>
+                                </li>
+                                <li><a href="#"><img src="/IMAGE/ICON/code-bracket.png" alt="icon">
+                                        <span>PROJECTS</span></a></li>
+                                <li><a href="#"><img src="/IMAGE/ICON/Subtract.png" alt="icon"> <span>RESUME</span></a>
+                                </li>
+                                <li><a href="#"><img src="/IMAGE/ICON/Vector (Stroke).png" alt="icon">
+                                        <span>BLOG</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <div class="content2">
+                <div class="P">
+                    <div class="img">
+                        <img src="/IMAGE/M5.JPG" alt="me">
+                    </div>
+                    <div class="name">
+                        <h1>KOMKEM KHAMKET</h1>
+                    </div>
+                </div>
+                <div class="T">
+                    <h1>INTRODUCE MYSELF</h1>
+                    <div class="G1">
+                        HELLO <br>
+                        I'M <span>AEM</span>
+                    </div>
+                    <div class="G2">
+                        <span>I'M</span> Interested
+                    </div>
+                    <div class="text-rotator">
+                        <span id="rotating-text"></span>
+                    </div>
+                    <div class="button-container">
+                        <a href="/HTML/about.html" class="custom-button">about me</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const activeLink = document.querySelector(".menu ul li a.active");
+        if (activeLink) {
+            activeLink.addEventListener("click", function (e) {
+                e.preventDefault();
+            });
+        }
+    });
+
+    const texts = ["QA / Software Tester", "Software Developer", "Bussiness Development", "Bussiness Analyst", "Data Analyst"];
+    let textIndex = 0;
+    let charIndex = 0;
+    const typingSpeed = 100;
+    const delayBetweenTexts = 2000;
+    const textElement = document.getElementById("rotating-text");
+
+    function typeText() {
+        if (charIndex < texts[textIndex].length) {
+            textElement.textContent += texts[textIndex].charAt(charIndex);
+            charIndex++;
+            setTimeout(typeText, typingSpeed);
+        } else {
+            // หลังพิมพ์ครบแล้ว รอ 2 วิ แล้วลบข้อความ
+            setTimeout(eraseText, delayBetweenTexts);
+        }
+    }
+
+    function eraseText() {
+        if (charIndex > 0) {
+            textElement.textContent = texts[textIndex].substring(0, charIndex - 1);
+            charIndex--;
+            setTimeout(eraseText, typingSpeed / 2);
+        } else {
+            // ข้อความถัดไป
+            textIndex = (textIndex + 1) % texts.length;
+            setTimeout(typeText, typingSpeed);
+        }
+    }
+
+    // เริ่มการพิมพ์เมื่อโหลดหน้า
+    document.addEventListener("DOMContentLoaded", function () {
+        typeText();
+    });
+
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('menu');
+
+    burger.addEventListener('click', () => {
+        burger.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+
+    // ปิดเมนูเมื่อคลิกลิงก์ในเมนู (มือถือ)
+    document.querySelectorAll('.menu ul li a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (menu.classList.contains('active')) {
+                menu.classList.remove('active');
+                burger.classList.remove('active');
+            }
+        });
+    });
+
+</script>
+
+</html>
