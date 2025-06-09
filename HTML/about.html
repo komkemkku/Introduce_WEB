@@ -3,10 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/CSS/about.css" />
     <title>ABOUT US</title>
+    <script>
+        function setRealVh() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        window.addEventListener('resize', setRealVh);
+        window.addEventListener('load', setRealVh);
+        window.addEventListener('orientationchange', setRealVh);
+        setRealVh();
+    </script>
 </head>
 
 <body>
@@ -47,8 +57,145 @@
                     </div>
                 </nav>
             </header>
+            <div class="content2">
+                <div class="P">
+                    <div class="img">
+                        <img src="/IMAGE/M6.JPG" alt="me">
+                    </div>
+                </div>
+                <div class="T">
+                    <h1>WHO AM I</h1>
+                    <div class="G1">
+                        <h2>KOMKEM KHAMKET</h2>
+                        <p>As an Information Technology student, I have a strong passion for technology and am always
+                            open
+                            to embracing new advancements. I am eager to develop myself in various aspects and apply my
+                            skills and knowledge effectively in any role I undertake. I am confident in my analytical
+                            and
+                            problem-solving abilities, as well as my capacity to make effective decisions. I am ready to
+                            be
+                            a valuable part of your team and contribute to enhancing your organization's efficiency.</p>
+                    </div>
+                    <div class="G2">
+                        <h2>EDUCATION</h2>
+                        <p>Bachelor’s Degree at Khon Kaen University
+                            College of Computing, Major in Information technology</p>
+                    </div>
+                    <div class="G3">
+                        <h2>SKILLS</h2>
+                        <li>Communication</li>
+                        <li>Time Management</li>
+                        <li>Flexibility and Adaptability</li>
+                        <li>Teamwork and Collaboration</li>
+                        <li>Curiosity and Lifelong Learning</li>
+                        <li>Positive Attitude</li>
+                    </div>
+                    <button class="scroll-button"
+                        onclick="document.querySelector('.content3').scrollIntoView({ behavior: 'smooth' });">
+                        ↓ SCROLL TO TOOLS
+                    </button>
+                </div>
+            </div>
+            <div class="content3" id="content3">
+                <div class="T2">
+                    <h1>Programming Languages & Tools</h1>
+                    <div class="PT">
+                        <div class="PT-box"><img src="/IMAGE/ICON/html.png" alt="icon 1"> HTML </div>
+                        <div class="PT-box"><img src="/IMAGE/ICON/css.png" alt="icon 2"> CSS </div>
+                        <div class="PT-box"><img src="/IMAGE/ICON/php.png" alt="icon 3"> PHP </div>
+                        <div class="PT-box"><img src="/IMAGE/ICON/Go.png" alt="icon 4"> GO </div>
+                        <div class="PT-box"><img src="/IMAGE/ICON/sql.png" alt="icon 5"> SQL </div>
+                        <div class="PT-box"><img src="/IMAGE/ICON/python.png" alt="icon 6"> PYTHON </div>
+                    </div>
+                </div>
+
+                <div class="P2">
+                    <div class="img2">
+                        <img src="/IMAGE/M6.JPG" alt="me">
+                    </div>
+                </div>
+            </div>
+
+            <div class="content4" id="content4">
+                <div class="T2">
+                    <h1>Programming Languages & Tools</h1>
+                    <div class="PT">
+                        <div class="PT-box"><img src="/IMAGE/ICON/visual-studio-code.png" alt="icon 1"> VS CODE </div>
+                        <div class="PT-box"><img src="/IMAGE/ICON/figma.png" alt="icon 2"> FIGMA </div>
+                        <div class="PT-box"><img src="/IMAGE/ICON/Power-BI.png" alt="icon 3"> POWER BI </div>
+                        <div class="PT-box"><img src="/IMAGE/ICON/cypress.png" alt="icon 4"> CYPRESS </div>
+                        <div class="PT-box"><img src="/IMAGE/ICON/postman.png" alt="icon 5"> POSTMAN </div>
+                        <div class="PT-box"><img src="/IMAGE/ICON/Robot-framework.png" alt="icon 6"> ROBOT FRAMEWORK
+                        </div>
+                        <div class="PT-box"><img src="/IMAGE/ICON/mysql.png" alt="icon 7"> MYSQL </div>
+                        <div class="PT-box"><img src="/IMAGE/ICON/PostgreSQL.png" alt="icon 8"> POSTGRESQL </div>
+                    </div>
+                </div>
+
+                <div class="P2">
+                    <div class="img2">
+                        <img src="/IMAGE/M6.JPG" alt="me">
+                    </div>
+                </div>
+            </div>
+
+            <div class="content5">
+                <div class="P">
+                    <div class="img">
+                        <img src="/IMAGE/M6.JPG" alt="me">
+                    </div>
+                </div>
+                <div class="T">
+                    <h1>EXPERIENCE</h1>
+                    <div class="G1">
+                        <h2><span>INTERN</span>SHIP</h2>
+                        <h3>GRIT CONSULTANT CO.,LTD. | NOV. 2024 - MAR. 2025</h3>
+                        <h3>Position : Software Developer</h3>
+                        <p>Redesigned and enhanced the Bangkok Brand website, an online platform showcasing OTOP
+                            products from Bangkok. Previously, customers had to contact product owners directly to place
+                            orders.
+                            To improve the shopping experience, the website was upgraded to support direct online
+                            ordering, integrating a seamless e-commerce system for more efficient transactions.
+                            Additionally, a sales display feature was implemented to help track sales data effectively.
+                        </p>
+                    </div>
+                    <div class="G2">
+                        <h2>Responsibilities</h2>
+                        <li>Analyze and design systems</li>
+                        <li>Design UX/UI</li>
+                        <li>Design responses for Front-end developers</li>
+                        <li>Develop APIs</li>
+                        <li>Design test cases and develop a test system</li>
+                    </div>
+                </div>
+            </div>
+            <div class="content6">
+                <div class="P">
+                    <div class="img">
+                        <img src="/IMAGE/M6.JPG" alt="me">
+                    </div>
+                </div>
+                <div class="T">
+                    <h1>EXPERIENCE</h1>
+                    <div class="G1">
+                        <h2>PRO<span>JECT</span></h2>
+                        <h3>Sale Forecasting Integrated to Business Intelligence
+                            Case Study of BarGrill Yakiniku | 2022 - 2024</h3>
+                        <p>Utilized Power BI for efficient data analysis and visualization, along with identifying
+                            product relationships to optimize product pairing and promotional strategies. Additionally,
+                            implemented sales forecasting using a linear regression model to predict business trends.
+                            Furthermore, developed a website to display the dashboard, ensuring seamless and convenient
+                            data access.
+                        </p>
+                    </div>
+                    <div class="G2">
+                        <h2><span>TEACHER</span>ASSISTANT</h2>
+                        <li>Software Testing and Quality Assurance</li>
+                        <li>Inspiration in IT Career</li>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 </body>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -77,6 +224,60 @@
             }
         });
     });
+
+    // const sections = document.querySelectorAll(".content2, .content3, .content4, .content5, .content6");
+
+    // const observer = new IntersectionObserver((entries) => {
+    //     entries.forEach((entry) => {
+    //         if (entry.isIntersecting) {
+    //             entry.target.classList.add("visible");
+    //         } else {
+    //             entry.target.classList.remove("visible");
+    //         }
+    //     });
+    // }, {
+    //     threshold: 0.6
+    // });
+
+    // sections.forEach((section) => {
+    //     observer.observe(section);
+    // });
+
+
+    document.addEventListener("scroll", function () {
+        const contents = document.querySelectorAll(
+            ".content2, .content3, .content4, .content5, .content6"
+        );
+
+        contents.forEach((content) => {
+            const rect = content.getBoundingClientRect();
+            const threshold = window.innerHeight * 0.85; // ปรับได้ เช่น 85% ของหน้าจอ
+
+            if (rect.top < threshold) {
+                content.classList.add("visible");
+            }
+        });
+    });
+
+    const options = {
+        root: null, // viewport
+        rootMargin: "0px",
+        threshold: 0.1, // 10% ของเนื้อหาโผล่ก็พอให้แสดงผล
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target); // แสดงครั้งเดียวพอ
+            }
+        });
+    }, options);
+
+    document.querySelectorAll(".content2, .content3, .content4, .content5, .content6")
+        .forEach((section) => observer.observe(section));
+
+
 </script>
 
 </html>

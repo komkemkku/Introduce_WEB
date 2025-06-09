@@ -3,12 +3,12 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: auto;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   font-family: "Black Ops One", cursive;
+  opacity: 1;
 }
 
 .bg {
@@ -33,13 +33,13 @@ body {
   z-index: -1;
 }
 
-/* nav */
+/* Header & Navigation */
 header {
   margin: 0;
-  font-family: "Black Ops One", cursive;
   padding: 10px 20px;
   position: relative;
   z-index: 10;
+  font-family: "Black Ops One", cursive;
 }
 
 .H {
@@ -51,7 +51,6 @@ header {
   height: 50px;
 }
 
-/* เมนูปกติ */
 .menu ul {
   display: flex;
   gap: 20px;
@@ -63,12 +62,12 @@ header {
 
 .menu ul li a {
   position: relative;
-  text-decoration: none;
-  color: #d0d3da;
   display: flex;
   align-items: center;
   gap: 8px;
   font-weight: bold;
+  text-decoration: none;
+  color: #d0d3da;
 }
 
 .menu ul li a:hover::after,
@@ -91,7 +90,7 @@ header {
   height: 20px;
 }
 
-/* เบอร์เกอร์เมนู (ซ่อนบน desktop) */
+/* Burger Menu */
 .burger {
   display: none;
   flex-direction: column;
@@ -110,40 +109,38 @@ header {
   transform-origin: center;
 }
 
-/* เบอร์เกอร์เมนู active animation */
 .burger.active div:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
+
 .burger.active div:nth-child(2) {
   opacity: 0;
 }
+
 .burger.active div:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* content */
-.content {
+/* Content Sections */
+.content,
+.content2 {
   position: relative;
   z-index: 1;
 }
 
-/* content2 */
 .content2 {
   display: flex;
-  position: relative;
-  z-index: 1;
   padding: 20px 0;
 }
 
-/* กล่องรูปภาพ */
+/* Image Box */
 .P {
   width: 500px;
-  height: auto;
   padding: 20px;
   margin-left: 150px;
   background-color: #fff;
   border-radius: 10px;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
 }
@@ -154,7 +151,7 @@ header {
   object-fit: cover;
   border-radius: 10px;
   display: block;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .name {
@@ -168,7 +165,7 @@ header {
   color: #3f6280;
 }
 
-/* ข้อความแนะนำตัว */
+/* Introduction Text */
 .T {
   margin-left: 200px;
   font-size: 42px;
@@ -177,14 +174,13 @@ header {
   color: #d0d3da;
 }
 
-.T G1 {
+.T G1,
+.T .G2 {
   font-size: 32px;
   color: #d0d3da;
 }
 
 .T .G2 {
-  font-size: 32px;
-  color: #d0d3da;
   margin-top: 70px;
 }
 
@@ -193,27 +189,29 @@ header {
   color: #3f6280;
 }
 
+/* Text Rotator */
 .text-rotator span {
+  font-family: "Black Ops One", cursive;
   font-size: 36px;
   font-weight: bold;
   color: #d0d3da;
   text-align: center;
   margin-top: 50px;
-  font-family: "Black Ops One", cursive;
-  min-height: 48px; /* ป้องกัน layout กระตุก */
+  min-height: 48px; /* Prevent layout jump */
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid #3f6280;
   animation: blink-caret 0.75s step-end infinite;
 }
 
-/* กระพริบเส้นเคอร์เซอร์ */
+/* Blink caret animation */
 @keyframes blink-caret {
   50% {
     border-color: transparent;
   }
 }
 
+/* Button Container */
 .button-container {
   margin-left: 350px;
   margin-top: 250px;
@@ -243,9 +241,9 @@ header {
   background-color: #2e4d66;
 }
 
-/* === Responsive === */
+/* === Responsive Breakpoints === */
 
-/* มือถือแนวตั้ง - max 480px */
+/* Mobile Portrait (max-width: 480px) */
 @media (max-width: 480px) {
   .burger {
     display: flex;
@@ -261,7 +259,6 @@ header {
     padding-top: 80px;
     transition: right 0.3s ease;
     z-index: 15;
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -281,7 +278,6 @@ header {
     font-size: 20px;
     padding: 12px 0;
     width: 100%;
-    color: #d0d3da;
   }
 
   .content2 {
@@ -308,7 +304,7 @@ header {
   }
 }
 
-/* แท็บเล็ตแนวตั้ง 481 - 768px */
+/* Tablet Portrait (481px - 768px) */
 @media (min-width: 481px) and (max-width: 768px) {
   .burger {
     display: flex;
@@ -324,7 +320,6 @@ header {
     padding-top: 80px;
     transition: right 0.3s ease;
     z-index: 15;
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -344,7 +339,6 @@ header {
     font-size: 22px;
     padding: 15px 0;
     width: 100%;
-    color: #d0d3da;
   }
 
   .content2 {
@@ -371,7 +365,7 @@ header {
   }
 }
 
-/* แท็บเล็ตแนวนอน 769 - 1366px (เพิ่มสูงสุดเป็น 1366px เพื่อรองรับ iPad Pro แนวตั้งและแนวนอน) */
+/* Tablet Landscape (769px - 1366px) */
 @media (min-width: 769px) and (max-width: 1366px) {
   .burger {
     display: none;
@@ -413,7 +407,6 @@ header {
     margin-left: 0;
     font-size: 36px;
     text-align: left;
-    align-self: center;
     max-width: 400px;
   }
 
@@ -424,7 +417,7 @@ header {
   }
 }
 
-/* desktop 1367px ขึ้นไป */
+/* Desktop (min-width: 1367px) */
 @media (min-width: 1367px) {
   .burger {
     display: none;
