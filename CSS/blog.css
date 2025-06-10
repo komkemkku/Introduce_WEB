@@ -120,6 +120,90 @@ header {
   height: 50px;
 }
 
+/* === content2 layout === */
+.content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+  gap: 40px;
+  font-family: "Black Ops One", cursive;
+  font-size: 32px;
+  color: #d0d3da;
+  text-align: center;
+}
+
+/* === กล่องรูปภาพ === */
+.content2 .M-B {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* แสดง 3 คอลัมน์ */
+  gap: 40px;
+  width: 100%;
+  max-width: 1600px;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+/* กล่องแต่ละบล็อก */
+.M-B .mb1,
+.M-B .mb2,
+.M-B .mb3,
+.M-B .mb4,
+.M-B .mb5 {
+  background-color: #eaeaea;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  text-align: center;
+}
+
+/* รูปภาพในแต่ละบล็อก */
+.M-B .mb1 .p img,
+.M-B .mb2 .p img,
+.M-B .mb3 .p img,
+.M-B .mb4 .p img,
+.M-B .mb5 .p img {
+  width: 100%;
+  max-height: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* หัวข้อในแต่ละบล็อก */
+.M-B .mb1 .h h3,
+.M-B .mb2 .h h3,
+.M-B .mb3 .h h3,
+.M-B .mb4 .h h3,
+.M-B .mb5 .h h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ข้อความในแต่ละบล็อก */
+.M-B .mb1 p,
+.M-B .mb2 p,
+.M-B .mb3 p,
+.M-B .mb4 p,
+.M-B .mb5 p {
+  font-size: 14px;
+  color: #555;
+}
+
 /* === Responsive === */
 
 /* มือถือแนวตั้ง - max 480px */
@@ -253,4 +337,3 @@ header {
     font-size: 22px;
   }
 }
-

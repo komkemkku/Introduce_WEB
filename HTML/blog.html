@@ -16,7 +16,7 @@
                 <nav>
                     <div class="H">
                         <div class="logo">
-                            <img src="/IMAGE/LOGO/INTRO ME.png" alt="Logo">
+                            <img src="/IMAGE/LOGO/INTRO ME.png" alt="Logo" />
                         </div>
 
                         <!-- เบอร์เกอร์ไอคอน -->
@@ -28,25 +28,84 @@
 
                         <div class="menu" id="menu">
                             <ul>
-                                <li><a href="/index.html"><img src="/IMAGE/ICON/Home.png" alt="icon">
-                                        <span>HOME</span></a></li>
-                                <li><a href="/HTML/about.html"><img src="/IMAGE/ICON/User.png" alt="icon"> <span>ABOUT
+                                <li><a href="/index.html"><img src="/IMAGE/ICON/Home.png"
+                                            alt="icon" /><span>HOME</span></a></li>
+                                <li><a href="/HTML/about.html"><img src="/IMAGE/ICON/User.png" alt="icon" /><span>ABOUT
                                             US</span></a></li>
-                                <li><a href="/HTML/project.html"><img src="/IMAGE/ICON/code-bracket.png" alt="icon">
-                                        <span>PROJECTS</span></a>
-                                </li>
-                                <li><a href="/HTML/resume.html"><img src="/IMAGE/ICON/Subtract.png" alt="icon">
-                                        <span>RESUME</span></a>
-                                </li>
+                                <li><a href="/HTML/project.html"><img src="/IMAGE/ICON/code-bracket.png"
+                                            alt="icon" /><span>PROJECTS</span></a></li>
+                                <li><a href="/HTML/resume.html"><img src="/IMAGE/ICON/Subtract.png"
+                                            alt="icon" /><span>RESUME</span></a></li>
                                 <li><a href="/HTML/blog.html" class="active"><img src="/IMAGE/ICON/Vector (Stroke).png"
-                                            alt="icon">
-                                        <span>BLOG</span></a>
-                                </li>
+                                            alt="icon" /><span>BLOG</span></a></li>
                             </ul>
                         </div>
                     </div>
                 </nav>
             </header>
+        </div>
+
+        <div class="content2">
+            <h1>BLOG</h1>
+            <div class="M-B">
+                <div class="mb1">
+                    <div class="p">
+                        <img src="/IMAGE/M5.JPG" alt="me"
+                            onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/742/742751.png';" />
+                    </div>
+                    <div class="h">
+                        <h3>komkem</h3>
+                    </div>
+                    <p>komkem khamket komkem khamket komkem khamket komkem khamket komkem khamket komkem khamket komkem
+                        khamket komkem khamket komkem khamket komkem khamket komkem khamket komkem khamket komkem
+                        khamket komkem khamket komkem khamket komkem khamket komkem khamket komkem
+                        khamket komkem khamket komkem khamket komkem khamket komkem khamket</p>
+                </div>
+
+                <div class="mb2">
+                    <div class="p">
+                        <img src="/IMAGE/M8.JPG" alt="me"
+                            onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/742/742751.png';" />
+                    </div>
+                    <div class="h">
+                        <h3></h3>
+                    </div>
+                    <p>komkem khamket</p>
+                </div>
+
+                <div class="mb3">
+                    <div class="p">
+                        <img src="/IMAGE/M8.JPG" alt="me"
+                            onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/742/742751.png';" />
+                    </div>
+                    <div class="h">
+                        <h3></h3>
+                    </div>
+                    <p>komkem khamket</p>
+                </div>
+
+                <div class="mb4">
+                    <div class="p">
+                        <img src="/IMAGE/M8.JPG" alt="me"
+                            onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/742/742751.png';" />
+                    </div>
+                    <div class="h">
+                        <h3></h3>
+                    </div>
+                    <p>komkem khamket</p>
+                </div>
+
+                <div class="mb5">
+                    <div class="p">
+                        <img src="" alt="me"
+                            onerror="this.onerror=null; this.src='https://cdn-icons-png.flaticon.com/512/742/742751.png';" />
+                    </div>
+                    <div class="h">
+                        <h3></h3>
+                    </div>
+                    <p> </p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -77,6 +136,17 @@
             }
         });
     });
+
+    // ตรวจสอบ div ที่ไม่มีข้อความใน h3 แล้วลบออก
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".M-B > div").forEach(box => {
+            const h3 = box.querySelector("h3");
+            if (!h3 || !h3.textContent.trim()) {
+                box.remove(); // ลบ div นี้ถ้าไม่มีข้อความใน h3
+            }
+        });
+    });
+
 </script>
 
 </html>
